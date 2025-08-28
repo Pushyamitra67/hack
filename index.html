@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="background-video">
+            <video src="Shape_08.mp4" autoplay loop muted playsinline></video>
+    </div>
+
+     <div class="overlay" id="overlay">
+        <div class="container">
+            <p class="finance-text">FINANCE AI</p>
+        </div>
+    <div class="logo"></div>
+    </div>
+    <script>
+        // Wait 3 seconds, then fade out the overlay
+        setTimeout(() => {
+        const overlay = document.getElementById('overlay');
+        overlay.classList.add('hidden');
+        }, 2500);
+    </script>
+
+
+</body>
+</html>

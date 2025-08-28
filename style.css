@@ -1,0 +1,118 @@
+body{
+    margin: 0  ;
+    padding: 0 ;
+    font-family: "fira-code", monospace;
+    height: auto;
+    width: 100%;
+    color: rgb(0, 0, 0);
+}  
+.background-video
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    padding-right: 100px;
+}
+
+#overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0,1); /* semi-transparent black */
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 1s ease;
+    }
+
+    #overlay.hidden {
+      opacity: 0;
+      pointer-events: none; /* Allow clicks to pass through */
+    }
+
+.logo {
+    background-image: url(Screenshot\ 2025-08-29\ 013743.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+    animation-name: logoAnimation;
+    animation-duration: 1s;
+    top: 47.5%;
+    left: 35%;
+    transform: translate(-47.5%, -35%);
+}
+@keyframes logoAnimation {
+    0% {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        width: 1500px;
+        height: 1500px;
+    }
+    50% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        width: 150px;
+        height: 150px;
+
+    }
+    100%{
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        top: 47.5%;
+        left:35%;
+        transform: translate(-47.5%, -35%);
+
+    }
+}
+.finance-text {
+    font-size: 60px;
+    margin: 0;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    display: inline-block;
+    width: 500px;
+    padding-left: 215px;
+    position: absolute;
+    font-family: sans-serif;
+    font-weight: 1000;
+    animation: textFadeIn 0s 1s forwards, textAnimation 1s steps(1000) 1.5s forwards;
+    text-wrap: nowrap;
+    overflow: hidden;
+    opacity: 0; /* Text is invisible before animation */
+}
+
+@keyframes textFadeIn {
+    from { opacity: 0; }
+    to { opacity: 0; }
+}
+@keyframes textAnimation {
+    0% {
+        width: 0ch; 
+        opacity: 1;       
+    }
+    100% {
+        opacity: 1;
+        display: inline-block;
+    }
+}
+   
