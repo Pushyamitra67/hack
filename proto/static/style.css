@@ -356,4 +356,42 @@ body {
         .contact-form button:hover {
             background: #00cc99;
         }
+    /* Add this keyframe animation to your CSS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modify your existing .content rule */
+.content {
+    margin-top: 200px;
+    padding: 20px 70px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
     
+    /* ADD THESE LINES: Make content invisible initially */
+    opacity: 0; 
+    animation: fadeInUp 0.8s ease-out forwards; /* Define the animation */
+    animation-play-state: paused; /* Keep it paused until JS starts it */
+}
+
+/* ADD THIS NEW RULE: JS will add this class to start the animation */
+.content.visible {
+    animation-play-state: running;
+}
+
+/* Ensure the navbar also starts paused if it's not already */
+.navbar {
+    /* ... your existing navbar styles ... */
+    animation-play-state: paused;
+}
+.navbar.visible {
+    animation-play-state: running;
+}

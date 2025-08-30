@@ -3,28 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Finance Gen AI</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Popup modal styles (shared for About, Services, Contact) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background: #111;
+            margin: 8% auto;
+            padding: 20px;
+            border-radius: 15px;
+            width: 60%;
+            color: #fff;
+            box-shadow: 0px 4px 20px rgba(255,255,255,0.2);
+            animation: fadeIn 0.3s ease-in-out;
+            font-family: sans-serif;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #fff;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: scale(0.9);}
+            to {opacity: 1; transform: scale(1);}
+        }
+        .modal h2 {
+            margin-top: 0;
+            color: #00ffcc;
+        }
+        .contact-info {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 8px;
+            background: #222;
+            color: #fff;
+        }
+        .contact-form button {
+            background: #00ffcc;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+        .contact-form button:hover {
+            background: #00cc99;
+        }
+    </style>
 </head>
 <body>
-     <div class="background-video">
-            <video src="Shape_08.mp4" autoplay loop muted playsinline></video>
+    <div class="background-video">
+        <video src="Shape_08.mp4" autoplay loop muted playsinline></video>
     </div>
 
-     <div class="overlay" id="overlay">
+    <div class="overlay" id="overlay">
         <div class="container">
-            <p class="finance-text">FINANCE AI</p>
+            <p class="finance-text">FINANCE GEN AI</p>
         </div>
-    <div class="logo"></div>
     </div>
-    <script>
-        // Wait 3 seconds, then fade out the overlay
-        setTimeout(() => {
-        const overlay = document.getElementById('overlay');
-        overlay.classList.add('hidden');
-        }, 2500);
-    </script>
 
+    <div class="navbar">
+        <a href="#" class="nav-logo">FINANCE GEN AI</a>
+        <div class="nav-bar">
+        <a href="#" class="nav-link" style="text-decoration: none;color: white;">Home</a>
+        <a href="#" class="nav-link" onclick="openModal('aboutModal')" style="text-decoration: none;color: white;">About</a>
+        <a href="#" class="nav-link" onclick="openModal('servicesModal')" style="text-decoration: none;color: white;">Services</a>
+        <a href="#" class="nav-link" onclick="openModal('contactModal')" style="text-decoration: none;color: white;">Contact</a>
+    </div>
+        <a href="#" class="nav-cta" id="getStartedBtn">Login</a>
+    </div>
 
+    <div class="login-modal" id="loginModal">
+        <div class="login-form-container">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            
+            <div id="loginForm" class="form-section">
+                <h2>Welcome Back</h2>
+                <p>Enter your credentials to continue.</p>
+                <form>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+                </div>
+            </div>
+
+            <div id="signupForm" class="form-section hidden">
+                <h2>Create Account</h2>
+                <p>Get started with a free account.</p>
+                <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Create Account</button>
+                </form>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="content">
+        <h1>Welcome to Finance Gen AI</h1>
+        <p>Your trusted partner in financial statements</p>
+        <button class="get-started-button">Get Started</button>
+    </div>
+
+    <script src="main.js"></script>
+    
 </body>
 </html>

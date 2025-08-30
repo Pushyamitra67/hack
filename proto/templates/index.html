@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Gen AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <style>
+        /* Popup modal styles (shared for About, Services, Contact) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background: #111;
+            margin: 8% auto;
+            padding: 20px;
+            border-radius: 15px;
+            width: 60%;
+            color: #fff;
+            box-shadow: 0px 4px 20px rgba(255,255,255,0.2);
+            animation: fadeIn 0.3s ease-in-out;
+            font-family: sans-serif;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #fff;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: scale(0.9);}
+            to {opacity: 1; transform: scale(1);}
+        }
+        </style>
+<body>
+    <div class="background-video">
+        <video src="{{ url_for('static', filename='Shape_08.mp4') }}" autoplay loop muted playsinline></video>
+    </div>
+
+    <div class="overlay" id="overlay">...</div>
+
+    <div class="navbar">
+        <a href="/" class="nav-logo">FINANCE GEN AI</a>
+        <div class="nav-bar">
+            <a href="/" class="nav-link" style="text-decoration: none;color: white;">Home</a>
+            <a href="#" class="nav-link" onclick="openModal('aboutModal')">About</a>
+            <a href="#" class="nav-link" onclick="openModal('servicesModal')">Services</a>
+            <a href="#" class="nav-link" onclick="openModal('contactModal')">Contact</a>
+        </div>
+        <a href="/chat" class="nav-cta" id="getStartedBtn">Login</a>
+    </div>
+
+    <div class="login-modal" id="loginModal">...</div>
+    
+    <div class="content">
+        <h1>Welcome to Finance Gen AI</h1>
+        <p>Your trusted partner in financial statements</p>
+        <a href="/chat">
+            <button class="get-started-button">Get Started</button>
+        </a>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Gen AI</title>
+    <link rel="stylesheet" href="style.css">
+
+</html>
